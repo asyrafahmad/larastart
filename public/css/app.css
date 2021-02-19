@@ -13074,6 +13074,14 @@ a.text-muted:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }@charset "UTF-8";
 
+.blue {
+  color: #3490dc;
+}
+
+.red {
+  color: #e3342f;
+}
+
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
