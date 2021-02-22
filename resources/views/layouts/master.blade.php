@@ -80,21 +80,9 @@
                 </router-link>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <router-link to="/" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Dashboard v1</p>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link to="/" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Dashboard v2</p>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link to="/" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Dashboard v3</p>
+                    <router-link to="/users" class="nav-link">
+                      <i class="far fa-users nav-icon"></i>
+                      <p>Users</p>
                     </router-link>
                   </li>
                 </ul>
