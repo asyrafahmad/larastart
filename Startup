@@ -5,3 +5,4 @@ Command
 
 
 
+- php artisan make:auth
