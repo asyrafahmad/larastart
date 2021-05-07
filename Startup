@@ -3,6 +3,7 @@ Learn from youtube (Code-inspire) - https://www.youtube.com/watch?v=CowsopJhX3M&
 Command
 - npm install admin-lte@v3.0.0-alpha.2 --save
 - npm install @fortawesome/fontawesome-free
+- npm install vue-router
 
 
 
