@@ -11,9 +11,11 @@ Vue.use(VueRouter)
 
 import dashboard from './components/Dashboard.vue'
 import profile from './components/Profile.vue'
+import users from './components/Users.vue'
 
 let routes = [
     { path: '/dashboard', name: 'dashboard', component: dashboard },
+    { path: '/users', name: 'users', component: users},
     { path: '/profile', name: 'profile', component: profile}
 ]
 
