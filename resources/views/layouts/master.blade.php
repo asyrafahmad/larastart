@@ -11,6 +11,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>AdminLTE 3 | Starter</title>
 
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <link rel="stylesheet" href="/css/app.css">
 
 </head>
@@ -64,7 +67,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="info">
           <a href="#" class="d-block">
               {{ Auth::user()->name }}
-
           </a>
         </div>
       </div>
@@ -76,19 +78,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <router-link to="/dashboard" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                     Dashboard
                     </p>
-                </a>
+                </router-link>
             </li>
 
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
-                Mangement
+                Management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -108,10 +110,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/profile" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Profile</p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
