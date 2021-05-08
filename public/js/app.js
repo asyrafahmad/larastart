@@ -52903,15 +52903,12 @@ var routes = [{
   component: _components_Profile_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  mode: 'history',
   routes: routes // short for 'routes: routes
 
 }); //VUE ROUTER
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); //default
-// const app = new Vue({   //default
-//     el: '#app',
-//     router
-// });
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   //default

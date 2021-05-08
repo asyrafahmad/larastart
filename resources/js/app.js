@@ -18,17 +18,13 @@ let routes = [
 ]
 
 const router = new VueRouter({
+    mode: 'history',
     routes      // short for 'routes: routes
 })
 //VUE ROUTER
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default
-
-// const app = new Vue({   //default
-//     el: '#app',
-//     router
-// });
 
 const app = new Vue({   //default
     el: '#app',
