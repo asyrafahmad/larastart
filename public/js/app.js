@@ -1829,6 +1829,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37612,8 +37675,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "row justify-content-center mt-5" }, [
+        _c("div", { staticClass: "col-md-12" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
               _vm._v("User Component")
@@ -37624,9 +37687,142 @@ var staticRenderFns = [
                 "\n                    I'm an example component.\n                "
               )
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _c("h3", { staticClass: "card-title" }, [_vm._v("Users Table")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-tools" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { "data-toggle": "modal", "data-target": "#addNew" }
+                  },
+                  [
+                    _vm._v("Add New"),
+                    _c("i", { staticClass: "fas fa-user-plus fa-fw" })
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body table-responsive p-0" }, [
+              _c("table", { staticClass: "table table-hover text-nowrap" }, [
+                _c("thead", [
+                  _c("tr", [
+                    _c("th", [_vm._v("ID")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Name")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Email")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Type")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Modify")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("tbody", [
+                  _c("tr", [
+                    _c("td", [_vm._v("183")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("John Doe")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("11-7-2014")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("span", { staticClass: "tag tag-success" }, [
+                        _vm._v("Approved")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fa fa-edit blue" })
+                      ]),
+                      _vm._v("/\n                      "),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fa fa-trash red" })
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            id: "addNew",
+            tabindex: "-1",
+            "aria-labelledby": "addNewLabel",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "modal-dialog modal-dialog-centered",
+              attrs: { role: "document" }
+            },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "addNewLabel" }
+                    },
+                    [_vm._v("Add New")]
+                  ),
+                  _vm._v(" "),
+                  _c("button", {
+                    staticClass: "btn-close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _vm._v("\n                ...\n            ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      attrs: { type: "button", "data-bs-dismiss": "modal" }
+                    },
+                    [_vm._v("Close")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Create")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ]
+      )
     ])
   }
 ]
@@ -53206,14 +53402,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************!*\
   !*** ./resources/js/components/Profile.vue ***!
   \*********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Profile.vue?vue&type=template&id=3bd692e4& */ "./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4&");
 /* harmony import */ var _Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Profile.vue?vue&type=script&lang=js& */ "./resources/js/components/Profile.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -53243,7 +53440,7 @@ component.options.__file = "resources/js/components/Profile.vue"
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Profile.vue?vue&type=script&lang=js& ***!
   \**********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
