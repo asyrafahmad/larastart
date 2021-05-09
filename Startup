@@ -10,3 +10,5 @@ Command
 
 - php artisan make:auth
 - php artisan serve --port=8080
+
+- php artisan make:controller API/UserController --api
