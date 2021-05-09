@@ -3,6 +3,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');    //default
 
+//IMPORT VFORM ERROR HANDLING VALIDATION
+import { Form, HasError, AlertError} from 'vform'
+
+window.Form = Form;
+// Vue.component(HasError.name, HasError)
+// Vue.component(AlertError.name, AlertError)
+//IMPORT VFORM ERROR HANDLING VALIDATION
+
 //VUE ROUTER
 import Vue from 'vue'
 import VueRouter from'vue-router'
