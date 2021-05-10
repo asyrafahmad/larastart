@@ -49,6 +49,30 @@ Vue.filter('myDate', function(created){
 });
 // Using momenJS globally
 
+// import progress bar API globally
+import VueProgressBar from 'vue-progressbar'
+
+Vue.use(VueProgressBar, {
+    color: 'rgb(143, 255, 199)',
+    failedColor: 'red',
+    height: '3px'
+})
+// import progress bar API globally
+
+// import SweetAlert globally
+import swal from 'sweetalert2'
+window.swal = swal;
+
+const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+window.toast = swal;
+// import SweetAlert globally
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default
 
 const app = new Vue({   //default

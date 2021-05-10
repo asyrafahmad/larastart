@@ -6,6 +6,8 @@ Command
 - npm install vue-router
 - npm i axios vform                                             // import error handling validation
 - npm install moment --save                                     // import momentJS
+- npm install vue-progressbar                                   // import progressbar
+- npm install sweetalert2                                       // import sweetAlert
 
 
 
@@ -13,3 +15,13 @@ Command
 - php artisan serve --port=8080
 
 - php artisan make:controller API/UserController --api
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1. vform
+2. momentJS
+3. Progress Bar API     (http://hilongjw.github.io/vue-progressbar/)
+4. Axios, VueJS
+5. SweetAlert           (http://sweetalert2.github.io/#examples)
