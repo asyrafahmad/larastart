@@ -73,6 +73,9 @@ const toast = swal.mixin({
 window.toast = swal;
 // import SweetAlert globally
 
+//
+window.Fire = new Vue();
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default
 
 const app = new Vue({   //default

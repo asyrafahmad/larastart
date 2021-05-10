@@ -24,4 +24,8 @@ Command
 2. momentJS
 3. Progress Bar API     (http://hilongjw.github.io/vue-progressbar/)
 4. Axios, VueJS
-5. SweetAlert           (http://sweetalert2.github.io/#examples)
+5. SweetAlert           (http://sweetalert2.github.io/#examples)        ** still stuck. TODO: need to test
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1.  pusher.com          // library function: to refresh the page if got a new data

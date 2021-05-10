@@ -130,9 +130,9 @@
             createUser(){
                 this.$Progress.start();
                 this.form.post('api/user');
+                Fire.$emit('AfterCreate');                          // vueJS custom event
 
                 $('#addNew').modal('hide')
-
                 toast({
                     type: 'success',
                     title: 'User Created is successfully'
@@ -141,11 +141,15 @@
                 this.$Progress.finish()
             }
         },
-        mounted() {
-            console.log('Component mounted.')
-
+        created() {
             this.loadUsers();
-            setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
+            Fire.$on('AfterCreate',() => {
+                this.loadUsers();                                   // vueJS custom event
+            })
+            // setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
+        },
+        mounted() {
+            console.log('Component mounted.');
         }
     }
 </script>

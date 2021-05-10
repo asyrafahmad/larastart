@@ -1946,6 +1946,8 @@ __webpack_require__.r(__webpack_exports__);
     createUser: function createUser() {
       this.$Progress.start();
       this.form.post('api/user');
+      Fire.$emit('AfterCreate'); // vueJS custom event
+
       $('#addNew').modal('hide');
       toast({
         type: 'success',
@@ -1954,14 +1956,16 @@ __webpack_require__.r(__webpack_exports__);
       this.$Progress.finish();
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this2 = this;
 
-    console.log('Component mounted.');
     this.loadUsers();
-    setInterval(function () {
-      return _this2.loadUsers();
-    }, 3000); // to keep refreshing the page
+    Fire.$on('AfterCreate', function () {
+      _this2.loadUsers();
+    }); // setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
   }
 });
 
@@ -78757,7 +78761,9 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a.mixin({
   timer: 3000
 });
 window.toast = sweetalert2__WEBPACK_IMPORTED_MODULE_8___default.a; // import SweetAlert globally
+//
 
+window.Fire = new vue__WEBPACK_IMPORTED_MODULE_1___default.a();
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); //default
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
