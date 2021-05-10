@@ -1,3 +1,4 @@
+//IMPORT FROM APPJS IS FOR GLOBALLY USED
 
 require('./bootstrap');
 
@@ -32,6 +33,11 @@ const router = new VueRouter({
     routes              // short for 'routes: routes
 })
 //VUE ROUTER
+
+// javascript filter text to be used globally
+Vue.filter('upText', function(text){
+    return text.charAt(0).toUpperCase() + text.slice(1)
+});
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default

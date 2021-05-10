@@ -37761,7 +37761,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(user.email))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(user.type))]),
+                    _c("td", [_vm._v(_vm._s(_vm._f("upText")(user.type)))]),
                     _vm._v(" "),
                     _vm._m(3, true)
                   ])
@@ -53437,6 +53437,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Dashboard_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue");
 /* harmony import */ var _components_Profile_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Profile.vue */ "./resources/js/components/Profile.vue");
 /* harmony import */ var _components_Users_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue");
+//IMPORT FROM APPJS IS FOR GLOBALLY USED
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //default
@@ -53472,7 +53473,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: routes // short for 'routes: routes
 
 }); //VUE ROUTER
+// javascript filter text to be used globally
 
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.filter('upText', function (text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); //default
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
