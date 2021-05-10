@@ -1955,8 +1955,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    var _this2 = this;
+
     console.log('Component mounted.');
     this.loadUsers();
+    setInterval(function () {
+      return _this2.loadUsers();
+    }, 3000); // to keep refreshing the page
   }
 });
 

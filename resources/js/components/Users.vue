@@ -145,6 +145,7 @@
             console.log('Component mounted.')
 
             this.loadUsers();
+            setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
         }
     }
 </script>
