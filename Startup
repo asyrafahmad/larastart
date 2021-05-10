@@ -5,6 +5,7 @@ Command
 - npm install @fortawesome/fontawesome-free
 - npm install vue-router
 - npm i axios vform                                             // import error handling validation
+- npm install moment --save                                     // import momentJS
 
 
 

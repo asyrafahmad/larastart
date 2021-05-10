@@ -38,7 +38,16 @@ const router = new VueRouter({
 Vue.filter('upText', function(text){
     return text.charAt(0).toUpperCase() + text.slice(1)
 });
+// javascript filter text to be used globally
 
+
+// Using momenJS globally
+import moment from 'moment';
+
+Vue.filter('myDate', function(created){
+    return moment(created).format('MMMM DD YYYY')
+});
+// Using momenJS globally
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default
 
