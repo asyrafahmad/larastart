@@ -129,16 +129,24 @@
             },
             createUser(){
                 this.$Progress.start();
-                this.form.post('api/user');
-                Fire.$emit('AfterCreate');                          // vueJS custom event
 
-                $('#addNew').modal('hide')
-                toast({
-                    type: 'success',
-                    title: 'User Created is successfully'
+                this.form.post('api/user')
+                .then(()=>{
+
+                    Fire.$emit('AfterCreate');                          // vueJS custom event
+
+                    $('#addNew').modal('hide')
+                    toast({
+                        type: 'success',
+                        title: 'User Created is successfully'
+                    })
+
+                    this.$Progress.finish()
+                })
+                .catch(()=>{
+
                 })
 
-                this.$Progress.finish()
             }
         },
         created() {
