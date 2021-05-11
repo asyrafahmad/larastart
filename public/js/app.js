@@ -1935,6 +1935,32 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    deleteUser: function deleteUser(id) {
+      // swal({
+      //     title: 'Are you sure?',
+      //     text: "You won't be able to revert this!",
+      //     icon: 'warning',
+      //     showCancelButton: true,
+      //     confirmButtonColor: '#3085d6',
+      //     cancelButtonColor: '#d33',
+      //     confirmButtonText: 'Yes, delete it!'
+      //     }).then((result) => {
+      //send ajax request to the server
+      this.form["delete"]('api/user/' + id); //     .then(()=>{
+      //         if (result.isConfirmed) {
+      //             swal(
+      //             'Deleted!',
+      //             'Your file has been deleted.',
+      //             'success'
+      //             )
+
+      Fire.$emit('AfterCreate'); //         }
+      //     })
+      //     .catch(()=>{
+      //         swal("Failed!", "There was something wrong.", "warning");
+      //     })
+      // })
+    },
     loadUsers: function loadUsers() {
       var _this = this;
 
@@ -1944,24 +1970,29 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     createUser: function createUser() {
-      this.$Progress.start();
-      this.form.post('api/user');
-      Fire.$emit('AfterCreate'); // vueJS custom event
+      var _this2 = this;
 
-      $('#addNew').modal('hide');
-      toast({
-        type: 'success',
-        title: 'User Created is successfully'
-      });
-      this.$Progress.finish();
+      this.$Progress.start();
+      this.form.post('api/user').then(function () {
+        Fire.$emit('AfterCreate'); // vueJS custom event
+
+        $('#addNew').modal('hide');
+        toast({
+          type: 'success',
+          title: 'User Created is successfully'
+        });
+
+        _this2.$Progress.finish();
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
 
     this.loadUsers();
     Fire.$on('AfterCreate', function () {
-      _this2.loadUsers();
+      _this3.loadUsers(); // vueJS custom event
+
     }); // setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
   },
   mounted: function mounted() {
@@ -63003,7 +63034,22 @@ var render = function() {
                       _vm._v(_vm._s(_vm._f("myDate")(user.createdAt)))
                     ]),
                     _vm._v(" "),
-                    _vm._m(3, true)
+                    _c("td", [
+                      _vm._m(3, true),
+                      _vm._v("/\n                      "),
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteUser(user.id)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-trash red" })]
+                      )
+                    ])
                   ])
                 }),
                 0
@@ -63291,14 +63337,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-edit blue" })
-      ]),
-      _vm._v("/\n                      "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fa fa-trash red" })
-      ])
+    return _c("a", { attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fa fa-edit blue" })
     ])
   },
   function() {
