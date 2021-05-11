@@ -40,7 +40,7 @@
                       <td>{{ user.type | upText }}</td>
                       <td>{{ user.createdAt | myDate }}</td>
                       <td>
-                          <a href="#"  @click="editModal(user.id)">
+                          <a href="#"  @click="editModal(user)">
                               <i class="fa fa-edit blue"></i>
                           </a>/
                           <a href="#" @click="deleteUser(user.id)">
@@ -116,6 +116,7 @@
                 editmode: false,
                 users:{},
                 form: new Form({
+                    id: '',
                     name: '',
                     email: '',
                     password: '',
@@ -127,13 +128,30 @@
         },
         methods: {
             updateUser(){
+                this.$Progress.start();
+                this.form.put('/api/user/'+this.form.id)
+                .then(() => {
+                    // if successfull
+                    $('#addNew').modal('hide');
+                    // swal(
+                    //     'Updated!',
+                    //     'Information has been updated.',
+                    //     'success'
+                    //     )
 
+                    this.$Progress.finish();
+                    Fire.$emit('AfterCreate');
+
+                })
+                .catch(() => {
+                    this.$Progress.fail();
+                })
             },
             editModal(user){
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
-                this.form.flll(user);
+                this.form.fill(user);
             },
             newModal(){
                 this.editmode = false;

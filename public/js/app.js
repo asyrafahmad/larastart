@@ -1928,6 +1928,7 @@ __webpack_require__.r(__webpack_exports__);
       editmode: false,
       users: {},
       form: new Form({
+        id: '',
         name: '',
         email: '',
         password: '',
@@ -1938,12 +1939,30 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    updateUser: function updateUser() {},
+    updateUser: function updateUser() {
+      var _this = this;
+
+      this.$Progress.start();
+      this.form.put('/api/user/' + this.form.id).then(function () {
+        // if successfull
+        $('#addNew').modal('hide'); // swal(
+        //     'Updated!',
+        //     'Information has been updated.',
+        //     'success'
+        //     )
+
+        _this.$Progress.finish();
+
+        Fire.$emit('AfterCreate');
+      })["catch"](function () {
+        _this.$Progress.fail();
+      });
+    },
     editModal: function editModal(user) {
       this.editmode = true;
       this.form.reset();
       $('#addNew').modal('show');
-      this.form.flll(user);
+      this.form.fill(user);
     },
     newModal: function newModal() {
       this.editmode = false;
@@ -1979,15 +1998,15 @@ __webpack_require__.r(__webpack_exports__);
       // }
     },
     loadUsers: function loadUsers() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("api/user").then(function (_ref) {
         var data = _ref.data;
-        return _this.users = data.data;
+        return _this2.users = data.data;
       });
     },
     createUser: function createUser() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$Progress.start();
       this.form.post('api/user').then(function () {
@@ -1999,16 +2018,16 @@ __webpack_require__.r(__webpack_exports__);
           title: 'User Created is successfully'
         });
 
-        _this2.$Progress.finish();
+        _this3.$Progress.finish();
       })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.loadUsers();
     Fire.$on('AfterCreate', function () {
-      _this3.loadUsers(); // vueJS custom event
+      _this4.loadUsers(); // vueJS custom event
 
     }); // setInterval( ()=>this.loadUsers(), 3000);            // to keep refreshing the page
   },
@@ -63071,7 +63090,7 @@ var render = function() {
                           attrs: { href: "#" },
                           on: {
                             click: function($event) {
-                              return _vm.editModal(user.id)
+                              return _vm.editModal(user)
                             }
                           }
                         },
