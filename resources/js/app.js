@@ -21,9 +21,11 @@ Vue.use(VueRouter)
 import dashboard from './components/Dashboard.vue'
 import profile from './components/Profile.vue'
 import users from './components/Users.vue'
+import developer from './components/Developer.vue'
 
 let routes = [
     { path: '/dashboard', name: 'dashboard', component: dashboard },
+    { path: '/developer', name: 'developer', component: developer },
     { path: '/users', name: 'users', component: users},
     { path: '/profile', name: 'profile', component: profile}
 ]
@@ -75,6 +77,24 @@ window.toast = swal;
 
 //
 window.Fire = new Vue();
+
+//Passport AOuth2 Token testing
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue').default
+);
+
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue').default
+);
+
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue').default
+);
+//Passport AOuth2 Token testing
+
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);   //default
 

@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('api');
+    }
+
     public function index()
     {
         return User::latest()->paginate(10);
